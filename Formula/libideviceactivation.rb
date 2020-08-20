@@ -15,6 +15,7 @@ class Libideviceactivation < Formula
   depends_on "pkg-config" => :build
   depends_on "libplist"
   depends_on "libtasn1"
+  depends_on "quantum-mobile-systems/qms/libimobiledevice"
   def install
     # ENV.deparallelize  # if your formula fails when building in parallel
     # Remove unrecognized options if warned by configure
