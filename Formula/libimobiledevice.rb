@@ -22,7 +22,7 @@ class Libimobiledevice < Formula
   def install
     # ENV.deparallelize  # if your formula fails when building in parallel
     # Remove unrecognized options if warned by configure
-    system "./autogen.sh"
+    system "./autogen.sh", "--enable-debug-code"
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
