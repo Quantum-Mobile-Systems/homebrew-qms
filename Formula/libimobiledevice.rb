@@ -15,21 +15,23 @@ class Libimobiledevice < Formula
   depends_on "pkg-config" => :build
   depends_on "libplist"
   depends_on "libtasn1"
-  depends_on "openssl"
+  depends_on "gnutls"
   depends_on "libusbmuxd"
 
 
   def install
     # ENV.deparallelize  # if your formula fails when building in parallel
     # Remove unrecognized options if warned by configure
-    system "./autogen.sh", "--enable-debug"
+    system "./autogen.sh", "--enable-debug",
+                           "--disable-openssl"
     system "./configure", "--disable-dependency-tracking",
                           "--disable-silent-rules",
                           "--prefix=#{prefix}",
                           # As long as libplist builds without Cython
                           # bindings, libimobiledevice must as well.
                           "--without-cython",
-                          "--enable-debug"
+                          "--enable-debug",
+                          "--disable-openssl"
     # system "cmake", ".", *std_cmake_args
     system "make", "install" # if this fails, try separate make/make install steps
   end
