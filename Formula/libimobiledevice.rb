@@ -17,6 +17,7 @@ class Libimobiledevice < Formula
   depends_on "libtasn1"
   depends_on "gnutls"
   depends_on "libusbmuxd"
+  depends_on "libgcrypt"
 
 
   def install
