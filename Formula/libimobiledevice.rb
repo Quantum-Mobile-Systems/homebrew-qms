@@ -4,7 +4,7 @@
 class Libimobiledevice < Formula
   desc ""
   homepage ""
-  url "https://github.com/libimobiledevice/libimobiledevice/archive/master.zip"
+  url "https://github.com/ethanatwork/libimobiledevice/archive/master.zip"
   version "1.3.1"
   sha256 ""
   # depends_on "cmake" => :build
